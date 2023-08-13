@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NomorSeri extends Model
+class Customers extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'serial_no',
-        'warranty_start',
-        'warranty_duration',
-        'used',
+        'nama',
+        'alamat',
+        'email',
+        'no_telp',
     ];
 
-    public function barang()
+    public function transaksis()
     {
-        return $this->belongsTo(Barang::class);
+        return $this->hasMany(Transaksi::class);
     }
 }
