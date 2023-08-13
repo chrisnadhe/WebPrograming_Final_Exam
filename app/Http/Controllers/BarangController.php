@@ -7,15 +7,13 @@ use Illuminate\Http\Request;
 
 class BarangController extends Controller
 {
-    public function index()
+    public function barangall()
     {
         $barang = Barang::all();
 
-        // return view('barang.index', [
-        //     'barang' => $barang,
-        // ]);
-
-        return view('barang.index');
+        return view('barang.index', [
+            'barang' => $barang,
+        ]);
     }
 
     public function create()

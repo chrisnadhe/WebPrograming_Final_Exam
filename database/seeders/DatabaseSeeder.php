@@ -19,8 +19,22 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'firstname' => 'Admin',
             'lastname' => 'Admin',
-            'email' => 'admin@argon.com',
+            'email' => 'chrisna@admin.com',
             'password' => bcrypt('secret')
+        ]);
+
+        DB::table('barang')->insert([
+            'product_name' => 'Tas 25L',
+            'brand' => 'eiger',
+            'price' => '350000',
+            'model_no' => 'SK023',
+        ]);
+
+        DB::table('barang')->insert([
+            'product_name' => 'Topi',
+            'brand' => 'eiger',
+            'price' => '35000',
+            'model_no' => 'SK026',
         ]);
     }
 }

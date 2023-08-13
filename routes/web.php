@@ -42,10 +42,11 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/profile', [UserProfileController::class, 'show'])->name('profile');
 	Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
-	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-	Route::get('/barang', [BarangController::class, 'index'])->name('barang');
+	Route::get('/barang', [BarangController::class, 'barangall'])->name('barang');
+	Route::get('barang/edit/{id}', [BarangController::class, 'edit'])->name('barang.edit');
 	Route::resource('nomor-seri', NomorSeriController::class);
 	Route::get('/transaksi', [TransaksiController::class, 'show'])->name('transaksi');
 	Route::resource('detail-transaksi', DetailTransaksiController::class);
+	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });
