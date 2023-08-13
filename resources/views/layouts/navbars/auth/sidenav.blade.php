@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" href="{{ route('home') }}">
+                <a class="nav-link {{ str_contains(request()->url(), 'transaksi') == true ? 'active' : '' }}" href="{{ route('transaksi') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-cart text-primary text-sm opacity-10"></i>
@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" href="{{ route('home') }}">
+                <a class="nav-link {{ str_contains(request()->url(), 'barang') == true ? 'active' : '' }}" href="{{ route('barang') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-shop text-primary text-sm opacity-10"></i>

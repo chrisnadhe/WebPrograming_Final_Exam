@@ -23,8 +23,11 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
-use App\Http\Controllers\ChangePassword;            
-            
+use App\Http\Controllers\ChangePassword;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\DetailTransaksiController;
+use App\Http\Controllers\NomorSeriController;
+use App\Http\Controllers\TransaksiController;
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
 	Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
@@ -41,4 +44,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
 	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+	Route::get('/barang', [BarangController::class, 'show'])->name('barang');
+	Route::resource('nomor-seri', NomorSeriController::class);
+	Route::get('/transaksi', [TransaksiController::class, 'show'])->name('transaksi');
+	Route::resource('detail-transaksi', DetailTransaksiController::class);
 });
