@@ -26,6 +26,7 @@ use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DetailTransaksiController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\NomorSeriController;
 use App\Http\Controllers\TransaksiController;
 
@@ -45,11 +46,15 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 	Route::get('/barang', [BarangController::class, 'barangall'])->name('barang');
 	Route::get('/barang/create', [BarangController::class, 'create'])->name('barang.create');
+	Route::post('/barang/create', [BarangController::class, 'store'])->name('barang.store');
 	Route::get('barang/edit/{id}', [BarangController::class, 'edit'])->name('barang.edit');
+	Route::put('barang/edit/', [BarangController::class, 'update'])->name('barang.update');
 	Route::resource('nomor-seri', NomorSeriController::class);
 	Route::get('/transaksi', [TransaksiController::class, 'transaksiall'])->name('transaksi');
 	Route::get('/transaksi/create', [TransaksiController::class, 'create'])->name('transaksi.create');
+	Route::post('/transaksi/create', [TransaksiController::class, 'store'])->name('transaksi.store');
 	Route::get('/transaksi/edeit/{id]', [TransaksiController::class, 'edit'])->name('transaksi.edit');
 	Route::resource('detail-transaksi', DetailTransaksiController::class);
+	Route::get('/laporan', [LaporanController::class, 'show'])->name('laporan');
 	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });

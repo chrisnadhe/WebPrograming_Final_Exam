@@ -8,7 +8,7 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <div class="d-flex justify-content-between">
-                            <h6 class="align-self-center">Data Barang</h6>
+                            <h3 class="align-self-center">Data Barang</h3>
                             <a href="{{ route('barang.create') }}" class="btn btn-primary">Tambah</a>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                                             <td class="text-xs text-secondary mb-0">{{ $item->price }}</td>
                                             <td class="text-xs text-secondary mb-0">{{ $item->model_no }}</td>
                                             <td class="text-xs text-secondary mb-0">
-                                                <a href="{{ route('transaksi.edit', $item->id) }}"
+                                                <a href="{{ route('barang.edit', $item->id) }}"
                                                     class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
                                                     data-original-title="Edit barang">
                                                     Edit

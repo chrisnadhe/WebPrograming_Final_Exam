@@ -8,7 +8,7 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <div class="d-flex justify-content-between">
-                            <h6>Data Transaksi</h6>
+                            <h3>Data Transaksi</h3>
                             <a href="{{ route('transaksi.create') }}" class="btn btn-primary">Tambah</a>
                         </div>
                     </div>

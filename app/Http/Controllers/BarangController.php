@@ -32,7 +32,7 @@ class BarangController extends Controller
 
         Barang::create($data);
 
-        return redirect()->route('barang.index')->with('success', 'Data barang berhasil ditambahkan');
+        return redirect()->route('barang')->with('success', 'Data barang berhasil ditambahkan');
     }
 
     public function show(Barang $barang)
@@ -60,13 +60,13 @@ class BarangController extends Controller
 
         $barang->update($data);
 
-        return redirect()->route('barang.index')->with('success', 'Data barang berhasil diubah');
+        return redirect()->route('barang')->with('success', 'Data barang berhasil diubah');
     }
 
     public function destroy(Barang $barang)
     {
         $barang->delete();
 
-        return redirect()->route('barang.index')->with('success', 'Data barang berhasil dihapus');
+        return redirect()->route('barang')->with('success', 'Data barang berhasil dihapus');
     }
 }
