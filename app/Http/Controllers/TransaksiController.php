@@ -10,12 +10,12 @@ use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
 {
-    public function index()
+    public function transaksiall()
     {
-        $transaksis = Transaksi::with(['detailTransaksis', 'customer'])->get();
+        $transaksi = Transaksi::all();
 
         return view('transaksi.index', [
-            'transaksis' => $transaksis,
+            'transaksi' => $transaksi,
         ]);
     }
 

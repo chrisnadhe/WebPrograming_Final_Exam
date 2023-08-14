@@ -44,9 +44,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 	Route::get('/barang', [BarangController::class, 'barangall'])->name('barang');
+	Route::get('/barang/create', [BarangController::class, 'create'])->name('barang.create');
 	Route::get('barang/edit/{id}', [BarangController::class, 'edit'])->name('barang.edit');
 	Route::resource('nomor-seri', NomorSeriController::class);
-	Route::get('/transaksi', [TransaksiController::class, 'show'])->name('transaksi');
+	Route::get('/transaksi', [TransaksiController::class, 'transaksiall'])->name('transaksi');
+	Route::get('/transaksi/create', [TransaksiController::class, 'create'])->name('transaksi.create');
+	Route::get('/transaksi/edeit/{id]', [TransaksiController::class, 'edit'])->name('transaksi.edit');
 	Route::resource('detail-transaksi', DetailTransaksiController::class);
 	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });
