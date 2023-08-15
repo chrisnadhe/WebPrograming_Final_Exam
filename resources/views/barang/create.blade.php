@@ -10,7 +10,7 @@
 
                     <div class="card card-frame">
                         <div class="card-body">
-                            <h3>Buat Transaksi</h3>
+                            <h3>Buat Barang</h3>
                 
                             <div class="form-group">
                                 <label for="product_name" class="form-control-label">Product Name</label>
