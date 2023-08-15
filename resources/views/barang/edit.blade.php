@@ -34,11 +34,26 @@
                             </div>
                 
                             <button class="btn btn-primary" type="submit">Update Barang</button>
-                            <button class="btn btn-danger" type="button" onclick="confirm('Are you sure you want to delete this barang?') ? this.closest('form').submit() : ''">Delete Barang</button>
                         </div>
                     </div>
                 </form>
-                
+                <div class="card card-frame mt-3">
+                    <div class="card-body">
+                        <h3>Delete Barang</h3>
+                        <p>Do you really want to delete this barang?</p>
+                        <p>To delete, click the button below.</p>
+            
+                        <form action="{{ route('barang.delete', $barang->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                        
+                            <input type="hidden" name="id" value="{{ $barang->id }}">
+                        
+                            <button type="submit" class="btn btn-danger" data-confirm="Are you sure you want to delete this barang?">Delete Barang</button>
+                        </form>
+                        
+                    </div>
+                </div>
             </div>
         </div>
         @include('layouts.footers.auth.footer')

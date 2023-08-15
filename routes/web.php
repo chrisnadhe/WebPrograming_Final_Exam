@@ -48,7 +48,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/barang/create', [BarangController::class, 'create'])->name('barang.create');
 	Route::post('/barang/create', [BarangController::class, 'store'])->name('barang.store');
 	Route::get('barang/edit/{id}', [BarangController::class, 'edit'])->name('barang.edit');
-	Route::put('barang/edit/', [BarangController::class, 'update'])->name('barang.update');
+	Route::put('barang/edit/{id}', [BarangController::class, 'update'])->name('barang.update');
+	Route::delete('barang/edit/{id}', [BarangController::class, 'destroy'])->name('barang.delete');
 	Route::resource('nomor-seri', NomorSeriController::class);
 	Route::get('/transaksi', [TransaksiController::class, 'transaksiall'])->name('transaksi');
 	Route::get('/transaksi/create', [TransaksiController::class, 'create'])->name('transaksi.create');
